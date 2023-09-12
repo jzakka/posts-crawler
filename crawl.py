@@ -32,8 +32,8 @@ def gallery_crawl(domain, base_url, gallery_id, headers, recent_read):
                 post_writer = post.find('td', class_='gall_writer ub-writer').text.strip()
                 message = "{'id':%d, 'title':'%s', 'writer':'%s' 'link':'%s'}" %(post_num, post_title, post_writer, post_link)
 
-                print(gallery_name+ '=' +message)
-                # producer.produce(topic, key=gallery_name, value=message)
+                # print(gallery_name+ '=' +message)
+                producer.produce(topic, key=gallery_name, value=message)
             except Exception as e:
                 pass
 
