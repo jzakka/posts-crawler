@@ -3,7 +3,7 @@ import threading
 
 DOMAIN="https://gall.dcinside.com"
 BASE_URL=DOMAIN +"/board/lists/"
-headers={'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'}
+headers={'User-Agent':'Chrome/'}
 
 with open("gallery_list.txt", "r") as file:
     for gallery_id in file:
