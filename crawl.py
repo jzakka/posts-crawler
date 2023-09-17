@@ -4,9 +4,13 @@ import time
 from bs4 import BeautifulSoup
 from confluent_kafka import Producer
 
-def gallery_crawl(domain, base_url, gallery_id, headers, recent_read):
+def gallery_crawl(domain, base_url, gallery_id, headers, recent_read, isProduct):
+    server = 'kafka.lwu.me:9093'  if isProduct else 'localhost:9092'
+
+    # print(server)
+
     producer = Producer({
-        'bootstrap.servers': 'my-kafka:9092',  
+        'bootstrap.servers':  server,  
         'client.id': gallery_id  
     })
 
